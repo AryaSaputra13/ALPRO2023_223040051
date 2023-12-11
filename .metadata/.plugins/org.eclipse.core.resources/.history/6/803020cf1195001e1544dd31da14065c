@@ -1,0 +1,138 @@
+package Tubes;
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+
+public class Mesin {
+	int N=2;
+	Nasabah[] a=new Nasabah[N];
+	
+	void input() {
+		Nasabah x;
+		Scanner sc = new Scanner(System.in);
+		
+		for (int i=0; i<N ; i++) {
+			x = new Nasabah();
+			
+			x.isiNasabah();;;
+			a[i]=x;
+		}
+	}
+	
+	void tampilRec() {
+		for (int i = 0; i < N ; i++) {
+			System.out.println("array ke "+i+":");
+			 a[i].tampil();
+		}
+	}
+	
+	void CekSaldo(int i){
+		 a[i].cekSaldo();
+	}
+	
+	void Tarik(int i){
+		 Scanner sc= new Scanner(System.in);
+		 
+		 System.out.print("Jumlah: ");
+		 double X=sc.nextDouble(); 
+		 a[i].saldo=a[i].saldo-X; 
+		 a[i].tampil();
+	}
+	
+	void mainMenu() {
+		int active;
+		active = login();
+		if (active!=-1) {
+			 int pilih= Menu();
+			 while (pilih!=0){
+				 switch(pilih){
+				 	case 1: CekSaldo(active);break;
+				 	case 2: Tarik(active);break;
+				 	case 3: SubMPembayaran();;break;
+//				 	case 4: ;
+				 	case 0: System.exit(pilih); break; 
+				 		default : System.out.print("Pilihan salah! ");
+				 }
+				 pilih= Menu();
+			 }
+		}
+	}
+	
+	void SubMPembayaran() {
+		Mesin Z=new Mesin();
+		Scanner sc= new Scanner(System.in);
+		 
+		 System.out.println("Menu: ");
+		 System.out.println("1. Cek Saldo ");
+		 System.out.println("2. Tarik ");
+		 System.out.println("0. Transfer");
+		 System.out.print("Pilihan anda ");
+		 int subPilih = sc.nextInt();
+		 
+		 switch (subPilih) {
+         case 1: System.out.println("Melakukan Pembayaran PDAM");break;
+         case 2: System.out.println("Melakukan Pembayaran Listrik");break;
+         case 0: Z.mainMenu();break;
+         default:
+             System.out.println("Pilihan salah!");
+     }
+	}
+	
+	int Menu(){ 
+		 Scanner sc= new Scanner(System.in);
+		 
+		 System.out.println("Menu: ");
+		 System.out.println("1. Cek Saldo ");
+		 System.out.println("2. Tarik ");
+		 System.out.println("3. Transfer");
+		 System.out.println("4. Top-up Pulsa ");
+		 System.out.println("5. Pembayaran ");
+		 System.out.println("0. Keluar ");
+		 System.out.print("Pilihan anda ");
+		 int X=sc.nextInt();
+		 return X;
+	}
+	
+	int login(){
+		 Scanner sc= new Scanner(System.in);
+		 
+		 System.out.println("Logiiin... ");
+		 System.out.print("Norek: ");String norek=sc.next();
+		 boolean ketemu;
+		 int i;
+		 int ulang=1;
+		 do {
+			 System.out.print("Pin: ");String pinku=sc.next();
+			 i=0;
+			 ketemu=false;
+			 while ((ketemu==false)&&(i<N)){
+				 if ((a[i].norek.equals(norek)) && (a[i].pin.equals(pinku)))
+					 ketemu=true;
+				 else
+					 i++;
+			 } 
+			 ulang++;
+		 }	while((ketemu==false)&&(ulang<=3));
+		 		if (ketemu==true){
+		 			System.out.println("Selamat Datang: ");
+		 			a[i].tampil();
+		 			return i;
+		 		} else
+		 	return -1; 
+	}
+
+	public static void main(String[] args) {
+		Mesin A=new Mesin();
+		A.input();
+		System.out.println();
+		A.mainMenu();
+		
+//		System.out.println();
+		
+//		A.input();
+//		System.out.println();
+//		A.tampilarray();
+	}
+}

@@ -1,0 +1,26 @@
+package Tubes;
+
+import java.util.Scanner;
+
+public class Nasabah {
+	double saldo;
+	String norek,nama,kodePembayaran,NoHP;
+	String pin;
+	
+	void isiNasabah() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nomor Rekening: "); norek=sc.next();
+		System.out.println("Nama: "); nama=sc.next();
+		System.out.println("Pin: "); pin=sc.next();
+		System.out.println("Saldo: "); saldo=sc.nextDouble();
+		System.out.println("Nomor HP: "); NoHP=sc.next();
+		System.out.println("Kode Bayar: "); kodePembayaran=sc.next();
+	}
+	
+	void tampil() {
+		System.out.println("Nomor Rekening: "+norek);
+		System.out.println("Nama: "+nama);
+		System.out.println("Saldo: "+saldo);
+	}
+
+}

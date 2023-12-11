@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Tugas.Tugas&apos; to &apos;MainJam&apos;&#x0D;&#x0A;- Original project: &apos;ALPRO_223040051&apos;&#x0D;&#x0A;- Original element: &apos;Tugas.Tugas&apos;&#x0D;&#x0A;- Renamed element: &apos;Tugas.MainJam&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Tugas&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Tugas{Tugas.java[Tugas" matchStrategy="1" name="MainJam" qualified="false" references="true" similarDeclarations="false" stamp="1684049893836" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,90 @@
+package Tubes;
+
+import java.util.Scanner;
+
+public class Nasabah {
+	double saldo;
+	String norek,nama,kodePembayaran,NoHP;
+	String pin;
+	
+	Nasabah() {
+	}
+		
+	Nasabah(String no,String name,String pn,String hp, String kp,double sd) {
+		this.norek = no;
+		this.nama = name;
+		this.pin = pn;
+		this.NoHP= hp;
+		this.kodePembayaran=kp;
+		this.saldo = sd;
+	}
+	
+	String getNoRek() {
+		return norek;
+	}
+	
+	void setNoRek(String no) {
+		this.norek = no;
+	}
+	
+	String getNama() {
+		return nama;
+	}
+	
+	void setNama(String namaku) {
+		this.nama = namaku;
+	}
+	
+	String getPin() {
+		 return nama;
+	}
+	
+	void setPin(String pn) {
+		this.pin = pn;
+	}
+	
+	String getNoHP() {
+		 return NoHP;
+	}
+	
+	void setNoHP(String hp) {
+		this.NoHP = hp;
+	}
+	
+	String getKodeP() {
+		 return kodePembayaran;
+	}
+	
+	void setKodeP(String kp) {
+		this.kodePembayaran = kp;
+	}
+	 
+	double getSaldo() {
+		return saldo;
+	}
+	
+	void setSaldo(double sd) {
+		this.saldo = sd;
+	} 
+	
+	void isiNasabah() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nomor Rekening: "); norek=sc.next();
+		System.out.print("Nama: "); nama=sc.next();
+		System.out.print("Pin: "); pin=sc.next();
+		System.out.print("Saldo: "); saldo=sc.nextDouble();
+		System.out.print("Nomor HP: "); NoHP=sc.next();
+		System.out.print("Kode Bayar: "); kodePembayaran=sc.next();
+	}
+	
+	void tampil() {
+		System.out.println("Nomor Rekening: "+norek);
+		System.out.println("Nama: "+nama);
+		System.out.println("Saldo: "+saldo);
+	}
+	
+	void cekSaldo() {
+		System.out.println("Saldo anda Rp "+ saldo);
+	}
+
+}
